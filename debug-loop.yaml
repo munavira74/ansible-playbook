@@ -2,8 +2,8 @@
   hosts: alma1
   tasks:
     - debug:
-        msg: I like "{{item}}"
+        msg: I want "{{item}}"
       loop:
-        - bike
-        - car
-        - cycle
+        - apple
+        - banana
+        - mango
