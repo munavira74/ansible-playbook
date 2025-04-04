@@ -1,0 +1,7 @@
+- name: install nginx-1.18.0
+  hosts: alma2
+  tasks:
+  - name: nginx-1.18.0
+    dnf:
+      name: nginx >= 1.18.0
+      state: present

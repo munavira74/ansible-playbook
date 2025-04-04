@@ -1,0 +1,10 @@
+- name: playbook to installs nginx, curl, and git on the target machines.
+  hosts: alma2
+  tasks:
+  - name: installs nginx, curl, and git
+    dnf:
+      name:
+        - nginx
+        - curl
+        - git
+      state: present

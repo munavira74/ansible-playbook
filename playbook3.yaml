@@ -1,0 +1,11 @@
+- name: creating an file in alma2
+  hosts: alma2
+  tasks:
+  - name: creating a file
+    file:
+      path: /home/almanew2/ansible
+      state: touch
+  - name: creating a directory
+    file:
+      path: /home/almanew2/folder
+      state: directory 

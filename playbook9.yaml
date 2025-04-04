@@ -1,0 +1,10 @@
+- name: executing shell script
+  hosts: alma1
+  tasks:
+  - name: changing the file to exectable
+    file:
+      path: /home/almanew1/shell.sh
+      mode: '0777'
+  - name: using shell module
+    shell:
+      ./shell.sh

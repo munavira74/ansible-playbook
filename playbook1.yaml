@@ -1,0 +1,12 @@
+- name: Playbook for nginx installation
+  hosts: alma1
+  tasks:
+  - name: Installation
+    package:
+      name: nginx
+      state: present
+  - name: Enabling and starting
+    service:
+      name: nginx
+      enabled: yes
+      state: started

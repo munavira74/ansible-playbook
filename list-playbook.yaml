@@ -1,0 +1,12 @@
+- name: installing mutiple packages using one task by using list concept
+  hosts: alma2
+  tasks:
+  - name: installing packages
+    package:
+      name:
+        - git
+        - curl
+        - nginx
+        - nfs-utils
+        - chrony
+      state: present

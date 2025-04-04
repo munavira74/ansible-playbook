@@ -1,0 +1,12 @@
+- name: installing postgres
+  hosts: ubuntu
+  tasks:
+  - name: installation
+    apt:
+      name: postgresql
+      state: present
+  - name: enabling
+    service:
+      name: postgresql.service
+      enabled: yes
+      state: started

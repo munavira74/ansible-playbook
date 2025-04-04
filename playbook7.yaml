@@ -1,0 +1,12 @@
+- name: playbook that starts and enables the mysql service.
+  hosts: alma1
+  tasks:
+  - name: install mysql
+    dnf:
+      name: mysql-server
+      state: present
+  - name: enabling
+    service:
+      name: mysqld
+      enabled: yes
+      state: started

@@ -1,0 +1,12 @@
+- name: installs and enables mariadb in targets.
+  hosts: all
+  tasks:
+  - name: installation
+    package:
+      name: mariadb-server
+      state: present
+  - name: enabling
+    service:
+      name: mariadb.service
+      enabled: yes
+      state: started

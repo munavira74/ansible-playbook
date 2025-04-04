@@ -1,0 +1,25 @@
+- name: hosting using httpd
+  hosts: alma1
+  vars:
+    pack: httpd
+  tasks:
+  - name: adding http and https into firewall
+    ansible.posix.firewalld:
+      service: https
+      state: enabled
+  - ansible.posix.firewalld:
+      service: http
+      state: enabled
+  - name: install httpd
+    dnf:
+      name: "{{pack}}"
+      state: present
+  - name: enable and start
+    service:
+      name: "{{pack}}"
+      enabled: yes
+      state: started
+  - name: add content to /var/www/html
+    copy:
+      dest: /var/www/html/index.html
+      content: haii

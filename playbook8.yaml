@@ -1,0 +1,7 @@
+- name: file creation using file module in path /tmp/testdir
+  hosts: all
+  tasks:
+  - name: file creation
+    file:
+      path: /tmp/testdir
+      state: touch

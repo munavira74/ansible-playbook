@@ -1,0 +1,22 @@
+- name: handlers
+  hosts: alma1
+  tasks:
+  - name: dnf
+    dnf:
+      name: nginx
+      state: present
+  - name: enabling
+    service:
+      name: nginx
+      enabled: yes
+      state: started
+  - name: content
+    copy:
+      dest: /usr/share/nginx/html/index.html
+      content: this is done by handler
+    notify: restart nginx  
+  handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted

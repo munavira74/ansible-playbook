@@ -1,0 +1,9 @@
+- name: printing valuse using debug module by using loop
+  hosts: alma1
+  tasks:
+    - debug:
+        msg: I like "{{item}}"
+      loop:
+        - bike
+        - car
+        - cycle
